@@ -41,7 +41,7 @@ fun calculateCircumscribedCircle(triangle: Triangle): Circle {
     val x = ((triangle.a.x * a * a) + (triangle.b.x * b * b) + (triangle.c.x * c * c)) / (2 * area)
     val y = ((triangle.a.y * a * a) + (triangle.b.y * b * b) + (triangle.c.y * c * c)) / (2 * area)
 
-    // 5. Ñîçäàåì îêðóæíîñòü
+    
     return Circle(Point(x, y), radius)
 }
 
