@@ -8,19 +8,19 @@ data class Triangle(val a: Point, val b: Point, val c: Point)
 data class Circle(val center: Point, val radius: Double)
 
 fun main() {
-    // 1. Создаем точки треугольника
+   
     val A = Point(0.0, 0.0)
     val B = Point(4.0, 0.0)
     val C = Point(2.0, 3.0)
 
-    // 2. Создаем треугольник
+    
     val triangle = Triangle(A, B, C)
 
     val circumscribedCircle = calculateCircumscribedCircle(triangle)
 
-    // 4. Выводим результат
-    println("Центр описанной окружности: (${circumscribedCircle.center.x}, ${circumscribedCircle.center.y})")
-    println("Радиус описанной окружности: ${circumscribedCircle.radius}")
+   
+    println("Г–ГҐГ­ГІГ° Г®ГЇГЁГ±Г Г­Г­Г®Г© Г®ГЄГ°ГіГ¦Г­Г®Г±ГІГЁ: (${circumscribedCircle.center.x}, ${circumscribedCircle.center.y})")
+    println("ГђГ Г¤ГЁГіГ± Г®ГЇГЁГ±Г Г­Г­Г®Г© Г®ГЄГ°ГіГ¦Г­Г®Г±ГІГЁ: ${circumscribedCircle.radius}")
 }
 
 
@@ -34,14 +34,14 @@ fun calculateCircumscribedCircle(triangle: Triangle): Circle {
     val s = (a + b + c) / 2
     val area = sqrt(s * (s - a) * (s - b) * (s - c))
 
-    // 3. Вычисляем радиус описанной окружности
+   
     val radius = (a * b * c) / (4 * area)
 
 
     val x = ((triangle.a.x * a * a) + (triangle.b.x * b * b) + (triangle.c.x * c * c)) / (2 * area)
     val y = ((triangle.a.y * a * a) + (triangle.b.y * b * b) + (triangle.c.y * c * c)) / (2 * area)
 
-    // 5. Создаем окружность
+    // 5. Г‘Г®Г§Г¤Г ГҐГ¬ Г®ГЄГ°ГіГ¦Г­Г®Г±ГІГј
     return Circle(Point(x, y), radius)
 }
 
